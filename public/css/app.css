@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat-VariableFont_wght.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background-color: #fff;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 200; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+nav {
+  padding: 0;
+  margin: 0; }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #eee; }
+    nav ul li {
+      position: relative;
+      display: inline-block; }
+      nav ul li a.menu-item {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000; }
+        nav ul li a.menu-item:hover {
+          background-color: #e5e5e5;
+          border-radius: 5px 5px 0 0; }
+        nav ul li a.menu-item.active {
+          background-color: #e5e5e5;
+          border-radius: 5px 5px 0 0; }
+      nav ul li ul {
+        list-style-type: none;
+        display: none;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        z-index: 1; }
+        nav ul li ul li {
+          position: relative;
+          display: block; }
+          nav ul li ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000; }
+          nav ul li ul li:hover > ul {
+            display: block; }
+          nav ul li ul li:hover {
+            background-color: #ddd; }
+      nav ul li:hover > ul {
+        display: block; }
