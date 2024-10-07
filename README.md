@@ -45,7 +45,13 @@ php artisan migrate
 php artisan db:seed
 ```
 
-8. Serve the application.
+8. Build the frontend.
+
+```bash
+nmp install && npm run build
+```
+
+9. Serve the application.
 
 ```bash
 php -S localhost:8000 -t public
