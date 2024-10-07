@@ -9,7 +9,7 @@ Work in progress.
 1. Clone the repository.
 
 ```bash
-git clone git@github.com:csisztaiarnold/laminas.git && cd laminas
+git clone git@github.com:csisztaiarnold/lumina.git && cd lumina
 ```
 
 2. Install the composer dependencies.
@@ -53,5 +53,6 @@ php -S localhost:8000 -t public
 
 ## Dependencies
 
+- Composer
 - PHP >= 8.2
 - PHP Sqlite3 extension (`php-sqlite3`).
