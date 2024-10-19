@@ -1,0 +1,18 @@
+{
+    "name": "lumina",
+    "version": "1.0.0",
+    "scripts": {
+        "build:css": "sass resources/scss:public/css",
+        "build:js": "tsc -p resources/js/tsconfig.json",
+        "build": "npm run build:css && npm run build:js",
+        "watch:css": "nodemon -e scss -x \"npm run build:css\" || exit 1",
+        "watch:js": "nodemon -e ts -x \"npm run build:js\" || exit 1",
+        "watch": "npm-run-all --parallel watch:css watch:js"
+    },
+    "devDependencies": {
+        "sass": "^1.32.0",
+        "typescript": "^4.5.4",
+        "nodemon": "^2.0.15",
+        "npm-run-all": "^4.1.5"
+    }
+}

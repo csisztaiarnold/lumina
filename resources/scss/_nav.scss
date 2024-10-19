@@ -1,0 +1,96 @@
+@use 'variables';
+
+nav {
+
+    ul {
+        padding: 0;
+        margin: 0;
+        font-size: 0;
+        border-bottom: 1px solid #333333;
+
+        li {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+
+            a.menu-item {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: variables.$nav_font_color;
+                background-color: variables.$nav_background_color;
+
+                &:hover {
+                    background-color: variables.$nav_background_color_hover;
+                }
+
+                &.active {
+                    color: variables.$nav_font_color_active;
+                    background-color: variables.$nav_background_color_active;
+                }
+
+                &.has-sublevel {
+                    &:after {
+                        content: '▼';
+                        display: inline-block;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+            ul.sublevel {
+                list-style-type: none;
+                display: none;
+                padding: 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1;
+                border-bottom: unset;
+
+                li {
+                    position: relative;
+                    display: block;
+
+                    a {
+                        display: block;
+                        padding: 10px;
+                        text-decoration: none;
+                        color: variables.$nav_sub_font_color;
+                        background-color: variables.$nav_sub_background_color;
+
+                        &:hover {
+                            background-color: variables.$nav_sub_background_color_hover;
+                        }
+                    }
+
+                    &:hover > ul {
+                        display: block;
+                    }
+
+                    ul {
+                        top: 0;
+                        left: 100%;
+                        right: auto;
+
+                        li {
+                            width: max-content;
+
+                            ul {
+                                top: 0;
+                                left: 100%;
+                                right: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover > ul {
+                display: block;
+            }
+        }
+    }
+}
