@@ -49,20 +49,34 @@ nav {
                 left: 0;
                 z-index: 1;
                 border-bottom: unset;
+                width: max-content;
+                min-width: -webkit-fill-available;
 
                 li {
                     position: relative;
                     display: block;
 
                     a {
-                        display: block;
+                        display: flex;
                         padding: 10px;
                         text-decoration: none;
                         color: variables.$nav_sub_font_color;
                         background-color: variables.$nav_sub_background_color;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
 
                         &:hover {
                             background-color: variables.$nav_sub_background_color_hover;
+                        }
+
+                        .has-sublevel {
+                            font-size: 24px;
+                            line-height: 14px;
+                            color: #fff;
+                            font-weight: 500;
+                            margin-left: 20px;
+                            padding-bottom: 3px;
                         }
                     }
 

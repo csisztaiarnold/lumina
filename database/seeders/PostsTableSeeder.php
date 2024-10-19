@@ -40,7 +40,7 @@ class PostsTableSeeder extends Seeder
             ]);
         }
 
-        // The rest are child items.
+        // Child items.
         foreach (range(6, 15) as $index) {
             $title = $faker->text(20);
             DB::table('posts')->insert([
@@ -51,7 +51,25 @@ class PostsTableSeeder extends Seeder
                 'subtitle' => $faker->text(20),
                 'content' => implode('', array_map(fn($p) => "<p>{$p}</p>", $faker->paragraphs(6, false))),
                 'is_home' => 0,
-                'is_published' => $faker->boolean,
+                'is_published' => 1,
+                'published_at' => $faker->dateTime,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
+
+        // 2nd level child items.
+        foreach (range(16, 20) as $index) {
+            $title = $faker->text(20);
+            DB::table('posts')->insert([
+                'user_id' => $faker->numberBetween(1, 10),
+                'parent_id' => $faker->numberBetween(6, 15),
+                'title' => $title,
+                'title_slug' => Str::slug($title),
+                'subtitle' => $faker->text(20),
+                'content' => implode('', array_map(fn($p) => "<p>{$p}</p>", $faker->paragraphs(6, false))),
+                'is_home' => 0,
+                'is_published' => 1,
                 'published_at' => $faker->dateTime,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
