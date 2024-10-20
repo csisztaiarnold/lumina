@@ -1,0 +1,47 @@
+@use 'variables';
+
+ul.pagination {
+    border: none;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+        margin: 0 5px;
+        cursor: pointer;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        a, span {
+            text-decoration: none;
+            color: variables.$pagination_font_color;
+            background-color: #fff;
+            padding: 5px 15px;
+            border: 1px solid #ddd;
+        }
+
+        a:hover {
+            background-color: #eee;
+            color: variables.$pagination_font_color_hover;
+        }
+
+        &.active {
+            span {
+                border: 1px solid #555;
+                background-color: #555;
+                color: #eee;
+            }
+        }
+
+        &.disabled {
+            span {
+                cursor: default;
+                border: 1px solid #eee;
+                color: #aaa;
+            }
+        }
+    }
+}

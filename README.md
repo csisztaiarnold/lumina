@@ -62,6 +62,30 @@ nmp install && npm run build
 php -S localhost:8000 -t public
 ```
 
+## Development
+
+### IxDF Coding Standard for Laravel
+
+To run checks only:
+
+```bash
+composer cs:check
+```
+
+To automatically fix many CS issues:
+
+```bash
+composer cs:fix
+```
+
+### Recreate the default database
+
+**NOTE:** This will delete all data and recreate the default database with dummy data.
+
+```bash
+rm database/database.sqlite && touch database/database.sqlite && php artisan migrate && php artisan db:seed
+```
+
 ## Dependencies
 
 - Composer

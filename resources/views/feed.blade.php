@@ -7,25 +7,30 @@
 @endsection
 
 @section('content')
-    <article>
+    <div class="feeds">
+
         <h2>{{ $post->title }}</h2>
 
-        <div class="feeds">
-            @if(count($feed) > 0)
-                <div class="pagination">
-                    {{ $feed->links('partials.custom_pagination') }}
-                </div>
+        @if(count($feed) > 0)
 
-                @foreach($feed as $feed_item)
+            {{ $feed->links('partials.custom_pagination') }}
+
+            @foreach($feed as $feed_item)
+                <article class="feed-item">
                     <h3>{{ $feed_item->title }}</h3>
-                    <div class="content">{!! $feed_item->content !!}</div>
-                @endforeach
+                    <div class="created_at">{{ $feed_item->created_at }}</div>
+                    <div class="introduction">{!! $feed_item->introduction !!}</div>
+                </article>
+            @endforeach
 
-                <div class="pagination">
-                    {{ $feed->links('partials.custom_pagination') }}
-                </div>
-            @endif
-        </div>
-    </article>
+            {{ $feed->links('partials.custom_pagination') }}
+
+        @else
+            <div class="message notification">
+                {{ __('No posts yet.') }}
+            </div>
+        @endif
+
+    </div>
 @endsection
 
