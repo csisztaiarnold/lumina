@@ -10,6 +10,13 @@ article h3 {
   margin: 0 0 40px 0;
 }
 
+.feeds .pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-VariableFont_wght.woff2") format("woff2");

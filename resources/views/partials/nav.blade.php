@@ -15,7 +15,7 @@
                    class="menu-item @if((int)$id_from_uri === $nav_item->id || (is_null($id_from_uri) && $nav_item->id == $home_post_id)) active @endif">
                     {{ $nav_item->title }}
                 </a>
-                @if($nav_item->children->isNotEmpty())
+                @if($nav_item->children->isNotEmpty() && $nav_item->is_feed != 1)
                     <ul class="sublevel sublevel-1">
                         @include('partials.menu_item', ['nav_items' => $nav_item->children, 'id_from_uri' => $id_from_uri, 'level' => 2])
                     </ul>

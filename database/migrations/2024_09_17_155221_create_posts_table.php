@@ -22,6 +22,8 @@ class CreatePostsTable extends Migration
             $table->string('subtitle');
             $table->string('content');
             $table->boolean('is_home');
+            $table->boolean('is_feed');
+            $table->integer('subs_paginated_by');
             $table->boolean('is_published');
             $table->dateTime('published_at');
             $table->timestamps();

@@ -53,6 +53,12 @@ class PostController extends Controller
             return view('404');
         }
 
+        // Show a feed view if the post is a feed.
+        if ($post->is_feed === 1) {
+            $children = $post->children()->where('is_published', 1)->paginate($post->subs_paginated_by);
+            return view('feed', ['post' => $post, 'feed' => $children, 'home_post_id' => $home_post_id]);
+        }
+
         return view('index', ['post' => $post, 'home_post_id' => $home_post_id]);
     }
 }

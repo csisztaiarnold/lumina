@@ -1,0 +1,11 @@
+@use 'variables';
+
+.feeds {
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+}
