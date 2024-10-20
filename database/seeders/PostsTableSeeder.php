@@ -26,7 +26,25 @@ class PostsTableSeeder extends Seeder
         // Create 5 items with parent_id = 0, the first one is set as home.
         foreach (range(1, 5) as $index) {
             $counter++;
-            $title = $faker->text(20);
+
+            switch ($counter) {
+                case 1:
+                    $title = 'Home';
+                    break;
+                case 2:
+                    $title = 'Blog';
+                    break;
+                case 3:
+                    $title = 'About';
+                    break;
+                case 4:
+                    $title = 'Contact';
+                    break;
+                case 5:
+                    $title = 'Privacy Policy';
+                    break;
+            }
+
             DB::table('posts')->insert([
                 'user_id' => $faker->numberBetween(1, 10),
                 'parent_id' => 0,
@@ -37,9 +55,9 @@ class PostsTableSeeder extends Seeder
                 'content' => implode('', array_map(fn($p) => "<p>{$p}</p>", $faker->paragraphs(6, false))),
                 'is_home' => $is_home_set ? 0 : ($is_home_set = 1),
                 'is_published' => $is_home_set ? 1 : $faker->boolean,
-                'is_feed' => $counter === 3 ? 1 : 0,
+                'is_feed' => $counter === 2 ? 1 : 0,
                 'is_feed_item' => 0,
-                'subs_paginated_by' => $counter === 3 ? 10 : 0,
+                'subs_paginated_by' => $counter === 2 ? 10 : 0,
                 'published_at' => $faker->dateTime,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -95,7 +113,7 @@ class PostsTableSeeder extends Seeder
             $title = $faker->text(20);
             DB::table('posts')->insert([
                 'user_id' => $faker->numberBetween(1, 10),
-                'parent_id' => 3,
+                'parent_id' => 2,
                 'title' => $title,
                 'title_slug' => Str::slug($title),
                 'subtitle' => $faker->text(20),

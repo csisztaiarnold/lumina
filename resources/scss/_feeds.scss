@@ -10,7 +10,7 @@
     }
 
     .pagination {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         flex-direction: row;
         justify-content: center;
     }
@@ -20,12 +20,38 @@
         h3 {
             font-size: 1.5em;
             margin: 0 0 5px 0;
+
+            a {
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    color: #555;
+                }
+            }
         }
 
         .created_at {
             color: #999;
             font-size: 0.9em;
             margin: 0 0 20px 0;
+        }
+
+        .read_more {
+
+
+            a {
+                display: inline-block;
+                padding: 5px 10px;
+                background-color: #555;
+                color: #fff;
+                text-decoration: none;
+                font-size: 0.9em;
+
+                &:hover {
+                    background-color: #333;
+                }
+            }
         }
 
         padding-bottom: 40px;

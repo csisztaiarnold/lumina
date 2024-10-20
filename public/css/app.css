@@ -17,7 +17,7 @@ article h3 {
   text-align: center;
 }
 .feeds .pagination {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   flex-direction: row;
   justify-content: center;
 }
@@ -28,10 +28,28 @@ article h3 {
   font-size: 1.5em;
   margin: 0 0 5px 0;
 }
+.feeds .feed-item h3 a {
+  color: #333;
+  text-decoration: none;
+}
+.feeds .feed-item h3 a:hover {
+  color: #555;
+}
 .feeds .feed-item .created_at {
   color: #999;
   font-size: 0.9em;
   margin: 0 0 20px 0;
+}
+.feeds .feed-item .read_more a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.feeds .feed-item .read_more a:hover {
+  background-color: #333;
 }
 
 @font-face {
@@ -137,6 +155,7 @@ nav ul li ul.sublevel {
 nav ul li ul.sublevel li {
   position: relative;
   display: block;
+  min-width: 250px;
 }
 nav ul li ul.sublevel li a {
   display: flex;
