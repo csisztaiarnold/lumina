@@ -33,9 +33,9 @@ nav ul li a {
   text-decoration: none;
 }
 nav ul li a .material-symbols-outlined {
-  font-size: 1em;
+  font-size: 1.1em;
   vertical-align: -3px;
-  color: #ffb700;
+  color: #a9a9a9;
 }
 nav ul li a:hover {
   background-color: #ddd;
@@ -82,9 +82,40 @@ h2 {
 .login .login-form .password {
   margin: 30px 0 30px 0;
 }
+.login .login-form button {
+  cursor: pointer;
+}
 .login .login-form button .material-symbols-outlined {
   vertical-align: -5px;
   color: #fff;
+}
+
+.posts-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.posts-container ul.sidebar-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+.posts-container ul.sidebar-menu li {
+  padding: 0;
+  margin: 0;
+}
+.posts-container ul.sidebar-menu li a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+}
+.posts-container ul.sidebar-menu li ul {
+  padding: 0 0 0 30px;
+  margin: 0;
+  list-style: none;
 }
 
 /*# sourceMappingURL=admin_styles.css.map */

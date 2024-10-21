@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
@@ -23,5 +24,5 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // Posts.
-    Route::get('/posts', [AdminController::class, 'posts'])->name('admin.posts.index');
+    Route::get('/posts', [AdminPostController::class, 'listPosts'])->name('admin.posts.index');
 });
