@@ -24,5 +24,5 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // Posts.
-    Route::get('/posts', [AdminPostController::class, 'listPosts'])->name('admin.posts.index');
+    Route::get('/posts/{id?}', [AdminPostController::class, 'listPosts'])->name('admin.posts.index');
 });

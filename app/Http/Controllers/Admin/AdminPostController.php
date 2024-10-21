@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 
 class AdminPostController extends Controller
 {
@@ -15,34 +17,10 @@ class AdminPostController extends Controller
         $this->post = $post;
     }
 
-    public function listPosts()
+    public function listPosts($parent_id = null): View|Factory|Application
     {
-        $posts = $this->post->all();
-        $nav =     $posts = \App\Models\Post::where('is_published', '1')
-            ->where('parent_id', 0)
-            ->with('children')
-            ->get();
-        return view('admin.posts.index', ['nav' => $nav, 'posts' => $posts]);
-    }
-
-    public function createPost(Request $request)
-    {
-        $post = $this->post->create($request->all());
-        return redirect()->route('admin.posts.index');
-    }
-
-    public function editPost(int $id, Request $request)
-    {
-        $post = $this->post->findOrFail($id);
-        $post->update($request->all());
-        return redirect()->route('admin.posts.index');
-    }
-
-    public function deletePost(int $id)
-    {
-        $post = $this->post->findOrFail($id);
-        $post->delete();
-        return redirect()->route('admin.posts.index');
+        $posts = $this->post->where('parent_id', $parent_id ?? 0)->get();
+        return view('admin.posts.index', ['posts' => $posts]);
     }
 }
 

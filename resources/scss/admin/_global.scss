@@ -20,6 +20,18 @@ button {
     border-radius: 3px;
 }
 
+h3 {
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+
+    .material-symbols-outlined {
+        font-size: 1.1em;
+        vertical-align: -4px;
+        color: #666;
+    }
+}
+
 nav {
     margin-bottom: 30px;
 
@@ -36,7 +48,7 @@ nav {
                 .material-symbols-outlined {
                     font-size: 1.1em;
                     vertical-align: -3px;
-                    color: #a9a9a9;
+                    color: #ff4141;
                 }
 
                 &:hover {
@@ -48,6 +60,58 @@ nav {
                     }
                 }
 
+            }
+        }
+    }
+}
+
+table {
+    width: 100%;
+
+    thead {
+        tr {
+            th {
+                padding: 10px;
+                background-color: #ff4141;
+                color: #fff;
+                font-size: 1em;
+                font-weight: 600;
+                text-align: left;
+
+                &.actions {
+                    width: 10%;
+                    text-align: center;
+                }
+
+                &.id {
+                    width: 10%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    tr {
+        background-color: #eee;
+
+        &:hover {
+            background-color: #ddd;
+        }
+
+        td {
+            padding: 10px;
+
+            a {
+                color: #666;
+                text-decoration: none;
+
+                &:hover {
+                    color: #ff4141;
+                }
+            }
+
+            &.id {
+                text-align: center;
             }
         }
     }
