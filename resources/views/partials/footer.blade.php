@@ -1,3 +1,3 @@
 <footer class="container">
-    The footer.
+    <p>&copy; {{ date('Y') }} {{ env('SITE_TITLE') }}</p>
 </footer>

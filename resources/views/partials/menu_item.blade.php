@@ -5,7 +5,7 @@
            class="menu-item @if($id_from_uri === $nav_item->id) active @endif">
             <div class="title">{{ $nav_item->title }}</div>
             @if($nav_item->children->isNotEmpty())
-                <div class="has-sublevel"> › </div>
+                <div class="has-sublevel"> ›</div>
             @endif
         </a>
         @if($nav_item->children->isNotEmpty())

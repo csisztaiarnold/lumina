@@ -1,0 +1,54 @@
+input, button {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    border-radius: 3px;
+}
+
+nav {
+    margin-bottom: 30px;
+
+    ul {
+        border: none;
+
+        li {
+            a {
+                padding: 8px 15px;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+
+                .material-symbols-outlined {
+                    font-size: 1em;
+                    vertical-align: -3px;
+                    color: #ffb700;
+                }
+
+                &:hover {
+                    background-color: #ddd;
+                    color: #333;
+
+                    .material-symbols-outlined {
+                        color: #333;
+                    }
+                }
+
+            }
+        }
+    }
+}
