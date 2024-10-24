@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', env('SITE_TITLE') . ' - ' . __('Login'))
+@section('title', env('SITE_TITLE') . ' - ' . __('Posts'))
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
     <div class="breadcrumbs">
         <div class="breadcrumb_item">
-            <a href="{{ route('admin.posts.index', ['id' => 0]) }}" title="{{ __('Posts') }}"> {{ __('Posts') }}</a>
+            <a href="{{ route('admin.posts.index', ['id' => 0]) }}" title="{{ __('Root') }}"> {{ __('Root') }}</a>
         </div>
         @foreach($hierarchy as $parent)
             <div class="breadcrumb_item">
@@ -37,7 +37,7 @@
             @foreach($posts as $post)
                 <tr>
                     <td class="id">{{ $post->id }}</td>
-                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->title }} @if($post->children_count > 0)({{ $post->children_count }} {{ $post->children_count > 1 ? __('children posts') : __('child post') }})@endif</td>
                     <td class="subcontent">
                         <a href="{{ route('admin.posts.index', ['id' => $post->id]) }}" }} title="{{ __('Subcontent') }}"><span class="material-symbols-outlined">subdirectory_arrow_right</span></a>
                     </td>

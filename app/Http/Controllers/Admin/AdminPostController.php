@@ -55,7 +55,11 @@ class AdminPostController extends Controller
      */
     public function listPosts(int $parent_id = 0): View|Factory|Application
     {
-        $posts = $this->post->where('parent_id', $parent_id ?? 0)->get();
+        $posts = $this->post->where('parent_id', $parent_id ?? 0)->get()->map(function ($post) {
+            $post->children_count = $post->children()->count();
+            return $post;
+        });
+
         $current_post = [];
         if($parent_id !== 0) {
             $current_post = $this->post->where('id', $parent_id)->first();
