@@ -95,6 +95,20 @@ table tr td.id {
   text-align: center;
 }
 
+.breadcrumbs {
+  display: flex;
+  margin-bottom: 20px;
+}
+.breadcrumbs .breadcrumb_item .material-symbols-outlined {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: -4px;
+  margin: 0 0 0 4px;
+}
+.breadcrumbs .breadcrumb_item a {
+  color: #333333;
+}
+
 h1 {
   font-weight: 400;
   font-size: 2em;

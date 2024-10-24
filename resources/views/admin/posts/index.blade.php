@@ -6,6 +6,24 @@
 
     <h3><span class="material-symbols-outlined">docs</span> {{ __('Posts') }}</h3>
 
+    <div class="breadcrumbs">
+        <div class="breadcrumb_item">
+            <a href="{{ route('admin.posts.index', ['id' => 0]) }}" title="{{ __('Posts') }}"> {{ __('Posts') }}</a>
+        </div>
+        @foreach($hierarchy as $parent)
+            <div class="breadcrumb_item">
+                <span class="material-symbols-outlined">chevron_right</span>
+                <a href="{{ route('admin.posts.index', ['id' => $parent->id]) }}" title="{{ $parent->title }}">{{ $parent->title }}</a>
+            </div>
+        @endforeach
+        @if($current_post)
+        <div class="breadcrumb_item">
+            <span class="material-symbols-outlined">chevron_right</span>
+            <a href="{{ route('admin.posts.index', ['id' => $current_post->parent_id]) }}" title="{{ $current_post->title }}">{{ $current_post->title }}</a>
+        </div>
+        @endif
+    </div>
+
     <div class="posts">
         @if(count($posts) > 0)
         <table class="posts-list">

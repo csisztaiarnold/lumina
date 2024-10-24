@@ -116,3 +116,21 @@ table {
         }
     }
 }
+
+.breadcrumbs {
+    display: flex;
+    margin-bottom: 20px;
+
+    .breadcrumb_item {
+        .material-symbols-outlined {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: -4px;
+            margin: 0 0 0 4px;
+        }
+
+        a {
+            color: #333333;
+        }
+    }
+}

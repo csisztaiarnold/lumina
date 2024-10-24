@@ -19,7 +19,7 @@ Route::middleware(['web'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::middleware(['web', 'auth'])->group(function () {
+Route::middleware(['web', 'auth'])->prefix('admin')->group(function () {
     // Dashboard.
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
